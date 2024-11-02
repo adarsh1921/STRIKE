@@ -1,33 +1,33 @@
 <img width="1280" alt="readme-banner" src="https://github.com/user-attachments/assets/35332e92-44cb-425b-9dff-27bcf1023c6c">
 
-# [Project Name] 🎯
+# [tug of click] 🎯
 
 
 ## Basic Details
-### Team Name: [Name]
+### Team Name: [STRIKE]
 
 
 ### Team Members
-- Team Lead: [Name] - [College]
-- Member 2: [Name] - [College]
-- Member 3: [Name] - [College]
+- Team Lead: [Adrash] - [NSS COLLEGE OF ENGINEERING]
+- Member 2: [Amruthavarshan P H] - [NSS COLLEGE OF ENGINEERING]
+- Member 3: [Arunkrishna P U] - [NSS COLLEGE OF ENGINEERING]
 
 ### Project Description
-[2-3 lines about what your project does]
+[This project is a two-player "Push-to-Win" game using an Arduino, where players compete by pressing buttons to move an LED towards their side. The first player to push the LED to their end wins, with game status displayed on an LCD.]
 
 ### The Problem (that doesn't exist)
-[What ridiculous problem are you solving?]
+[This project humorously solves the "problem" of deciding who's faster by creating a fun button-mashing game with an LED race, perfect for friendly competition.]
 
 ### The Solution (that nobody asked for)
-[How are you solving it? Keep it fun!]
+[A thrilling LED race game that lets two players mash buttons to claim victory, turning quick reflexes into ultimate bragging rights—because who *really* needed another way to settle friendly rivalries?]
 
 ## Technical Details
 ### Technologies/Components Used
 For Software:
-- [Languages used]
-- [Frameworks used]
-- [Libraries used]
-- [Tools used]
+- [Languages used:C/C++ (Arduino IDE)]
+- [Frameworks used: Arduino Framework]
+- [Libraries used: LiquidCrystal_I2C for the LCD display]
+- [Tools used: Arduino IDE for code development and debugging]
 
 For Hardware:
 - [List main components]
