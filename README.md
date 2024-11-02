@@ -16,10 +16,10 @@
 [This project is a two-player "wiggle-to-Win" game using an Arduino, where players compete by wiggling the fingers to move an LED towards opposite side. The first player to push the LED to their opposite end wins, with game status displayed on an LCD.]
 
 ### The Problem (that doesn't exist)
-[This project humorously solves the "problem" of deciding who's faster by creating a fun button-mashing game with an LED race, perfect for friendly competition.]
+[This project humorously solves the "problem" of deciding who's faster by creating a fun finger flicking game with an LED race, perfect for friendly competition.]
 
 ### The Solution (that nobody asked for)
-[A thrilling LED race game that lets two players mash buttons to claim victory, turning quick reflexes into ultimate bragging rights—because who *really* needed another way to settle friendly rivalries?]
+[A thrilling LED race game that lets two players mash buttons to claim victory, turning quick reflexes into ultimate bragging rights—because who really needed another way to settle friendly rivalries?]
 
 ## Technical Details
 ### Technologies/Components Used
@@ -32,48 +32,45 @@ For Software:
 For Hardware:
 - [Arduino uno, LEDs, IR sensor, Buzzer,  connecting wire]
 - [Microcontroller:
+   Arduino Uno: 5V, 16 MHz, 14 digital I/O pins
+  
+- IR Sensors:
+  - Quantity: 2
+  - Voltage: 3.3V-5V
+  - Range: 2-30 cm
+  - Output: Digital (HIGH/LOW)
+    
+- LEDs:
+  - Quantity: 7
+  - Voltage: 2-3V
+  - Current: ~20mA per LED
+    
+- Buzzer:
+  - Voltage: 5V
+  - Programmable tone frequencies
+    
+- LCD Display:
+  - 16x2 I2C module
+  - Address: Typically 0x27 or 0x3F
+    
+- Power Supply:
+  - USB or 9V battery
+    
+- Connections:
+  - LEDs: Pins 4-10
+  - IR Sensors: Pins 2, 3
+  - Buzzer: Pin 11
+    
+- LCD:
+   VCC - 5V, GND - GND, SDA - A4, SCL - A5
 
-Arduino Uno: 5V, 16 MHz, 14 digital I/O pins
-IR Sensors:
-
-Quantity: 2
-Voltage: 3.3V-5V
-Range: 2-30 cm
-Output: Digital (HIGH/LOW)
-LEDs:
-
-Quantity: 7
-Voltage: 2-3V
-Current: ~20mA per LED
-Buzzer:
-
-Voltage: 5V
-Programmable tone frequencies
-LCD Display:
-
-16x2 I2C module
-Address: Typically 0x27 or 0x3F
-Power Supply:
-
-USB or 9V battery
-Connections:
-
-LEDs: Pins 4-10
-IR Sensors: Pins 2, 3
-Buzzer: Pin 11
-LCD: I2C interface
 Game Mechanics:
 
-LED starts in the middle
-Players use IR sensors to move LED
-Sound effects for start and win conditions
-
-
-
-
-
-]
-- [List tools required]
+Players press their buttons to move a central LED left or right along a row.
+Player 1 moves the LED right, and Player 2 moves it left.
+The goal is to push the LED to the opponent’s end to win. 
+When the LED reaches the far right, Player 1 wins; if it reaches the far left, Player 2 wins. 
+The game then displays a winning message and plays a victory sound.
 
 ### Implementation
 For Software:
