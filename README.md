@@ -114,7 +114,7 @@ Finally, connect the buzzer by wiring the positive terminal to Digital Pin 11 an
 
 [Schematic]
 
-(![Neat Inari-Wolt (1)](https://github.com/user-attachments/assets/a071a0cd-b80c-4c2c-aad2-c7bebe6abaf9))
+![Neat Inari-Wolt (1)](https://github.com/user-attachments/assets/a071a0cd-b80c-4c2c-aad2-c7bebe6abaf9)
 
 A Finger Wars is an engaging two-player game that utilizes an Arduino microcontroller along with various electronic components to create a competitive experience. At the heart of the game is an I2C LCD that displays vital information, including game messages and the current position of the LED. A row of LEDs, connected to digital output pins, forms the game field, while two IR sensors play a crucial role in player interaction. IR sensors detect the players' hand movements without direct contact, allowing for a more dynamic and hygienic gameplay experience. As players wave their hands over the sensors, the LED shifts toward their opponent's end of the row. The game begins with the LED centered, and players compete to move it to the edges, striving for victory. When the LED reaches either end, the game announces the winner on the LCD and plays a celebratory sound through the buzzer. This innovative use of IR sensors enhances the responsiveness and engagement of the game, providing a modern twist to the classic concept of competition.
 
@@ -159,7 +159,7 @@ Restart Option: Players can reset the game by powering it off and then on again 
 Engaging Gameplay: The game’s design focuses on creating an immersive experience. Players actively engage with the game through physical movement, promoting interaction and competition.
 Visual and Auditory Feedback: The combination of LED indicators, real-time updates on the LCD, and sound effects from the buzzer ensures players receive immediate feedback on their actions, enhancing their sense of involvement and enjoyment.
 Hygienic Interaction: The use of IR sensors allows for touchless gameplay, making the game more appealing in social settings, particularly in light of hygiene concerns.
-The final build of Finger Wars effectively integrates various electronic components to create a fun and interactive game. Its innovative use of IR sensors for player interaction, combined with visual and auditory feedback, provides a modern twist to classic competitive games. The game not only serves as a source of entertainment but also demonstrates the principles of electronics and programming, making it an engaging project for both creators and players alike*
+The final build of Finger Wars effectively integrates various electronic components to create a fun and interactive game. Its innovative use of IR sensors for player interaction, combined with visual and auditory feedback, provides a modern twist to classic competitive games. The game not only serves as a source of entertainment but also demonstrates the principles of electronics and programming, making it an engaging project for both creators and players alike
 ### Project Demo
 
 # Video
