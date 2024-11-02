@@ -30,8 +30,49 @@ For Software:
 - [Tools used: Arduino IDE for code development and debugging]
 
 For Hardware:
-- [List main components]
-- [List specifications]
+- [Arduino uno, LEDs, IR sensor, Buzzer,  connecting wire]
+- [Microcontroller:
+
+Arduino Uno: 5V, 16 MHz, 14 digital I/O pins
+IR Sensors:
+
+Quantity: 2
+Voltage: 3.3V-5V
+Range: 2-30 cm
+Output: Digital (HIGH/LOW)
+LEDs:
+
+Quantity: 7
+Voltage: 2-3V
+Current: ~20mA per LED
+Buzzer:
+
+Voltage: 5V
+Programmable tone frequencies
+LCD Display:
+
+16x2 I2C module
+Address: Typically 0x27 or 0x3F
+Power Supply:
+
+USB or 9V battery
+Connections:
+
+LEDs: Pins 4-10
+IR Sensors: Pins 2, 3
+Buzzer: Pin 11
+LCD: I2C interface
+Game Mechanics:
+
+LED starts in the middle
+Players use IR sensors to move LED
+Sound effects for start and win conditions
+
+
+
+
+
+]
 - [List tools required]
 
 ### Implementation
