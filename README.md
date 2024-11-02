@@ -75,7 +75,9 @@ The game then displays a winning message and plays a victory sound.
 ### Implementation
 For Software:
 # Installation
-[commands]
+Wire.h
+LiquidCrystal_I2C.h
+
 
 # Run
 [commands]
