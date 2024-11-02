@@ -153,9 +153,8 @@ Hygienic Interaction: The use of IR sensors allows for touchless gameplay, makin
 The final build of Finger Wars effectively integrates various electronic components to create a fun and interactive game. Its innovative use of IR sensors for player interaction, combined with visual and auditory feedback, provides a modern twist to classic competitive games. The game not only serves as a source of entertainment but also demonstrates the principles of electronics and programming, making it an engaging project for both creators and players alike*
 ### Project Demo
 # Video
-[Add your demo video link here]
-*Explain what the video demonstrates*
-
+[[Add your demo video link here](https://youtu.be/y0UUmDJTGRA?si=vT_ZeLQmOUt4Zwol)]
+*The video shows which components we used and how the final output turned out*
 # Additional Demos
 [Add any extra demo materials/links]
 
