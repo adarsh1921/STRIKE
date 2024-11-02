@@ -13,7 +13,7 @@
 - Member 3: [Arunkrishna P U] - [NSS COLLEGE OF ENGINEERING]
 
 ### Project Description
-[This project is a two-player "wiggle-to-Win" game using an Arduino, where players compete by wiggling the fingers to move an LED towards opposite side. The first player to push the LED to their opposite end wins, with game status displayed on an LCD.]
+[This project is a two-player "Finger Wars" game using an Arduino, where players compete by wiggling the fingers to move an LED towards opposite side. The first player to push the LED to their opposite end wins, with game status displayed on an LCD.]
 
 ### The Problem (that doesn't exist)
 [This project humorously solves the "problem" of deciding who's faster by creating a fun finger flicking game with an LED race, perfect for friendly competition.]
@@ -84,14 +84,17 @@ For Software:
 For Software:
 
 # Screenshots (Add at least 3)
-![Screenshot1](Add screenshot 1 here with proper name)
+![Screenshot1](Add screenshot 1 here w![e111f725-28f1-417e-bdeb-39c91b8d421a](https://github.com/user-attachments/assets/bf724560-ddf0-4c65-849f-7715a58585a7)
+ith proper name)
 *Add caption explaining what this shows*
 
-![Screenshot2](Add screenshot 2 here with proper name)
+![Screenshot2](Add screenshot 2 here with ![bc19bba0-8225-4b9b-bc0c-6cc14c6371b9](https://github.com/user-attachments/assets/7235b86a-50b3-4e0e-a096-b6c16f0bb47c)
+proper name)
 *Add caption explaining what this shows*
 
-![Screenshot3](Add screenshot 3 here with proper name)
+![Screenshot3](Add screenshot 3 here with proper name![26d287c1-6fd7-46fb-83e9-c5f6d01cacd0](https://github.com/user-attachments/assets/ae793ae5-6368-4fbd-9306-3918a38326a1))
 *Add caption explaining what this shows*
+
 
 # Diagrams
 ![Workflow](Add your workflow/architecture diagram here)
@@ -100,22 +103,54 @@ For Software:
 For Hardware:
 
 # Schematic & Circuit
-![Circuit](Add your circuit diagram here)
-*Add caption explaining connections*
+![Circuit]([Screenshot 2024-11-02 222235](https://github.com/user-attachments/assets/b08b9d70-3c48-4343-a1e0-9202ca902949))
+*Connect the LCD (I2C 16x2) by wiring SDA to A4 and SCL to A5 on the Arduino Uno, and power it by connecting VCC to 5V and GND to GND.
+For the IR sensors, connect IR Sensor 1 (Player 1) to Digital Pin 2 and IR Sensor 2 (Player 2) to Digital Pin 3.
+To set up the LEDs as position indicators, connect each one to Digital Pins 4 through 10 in order.
+Finally, connect the buzzer by wiring the positive terminal to Digital Pin 11 and the negative terminal to GND.*
 
-![Schematic](Add your schematic diagram here)
-*Add caption explaining the schematic*
+![Schematic]([Neat Inari-Wolt (1)](https://github.com/user-attachments/assets/991dd80c-4d94-4111-bdda-2444acad88a8))
+*AFinger Wars is an engaging two-player game that utilizes an Arduino microcontroller along with various electronic components to create a competitive experience. At the heart of the game is an I2C LCD that displays vital information, including game messages and the current position of the LED. A row of LEDs, connected to digital output pins, forms the game field, while two IR sensors play a crucial role in player interaction. IR sensors detect the players' hand movements without direct contact, allowing for a more dynamic and hygienic gameplay experience. As players wave their hands over the sensors, the LED shifts toward their opponent's end of the row. The game begins with the LED centered, and players compete to move it to the edges, striving for victory. When the LED reaches either end, the game announces the winner on the LCD and plays a celebratory sound through the buzzer. This innovative use of IR sensors enhances the responsiveness and engagement of the game, providing a modern twist to the classic concept of competition.*
 
 # Build Photos
 ![Components](Add photo of your components here)
-*List out all components shown*
+*Arduino board, I2C LCD, 8 LEDs, 2 IR sensors, buzzer, resistors, breadboard, jumper wires.
+*
 
-![Build](Add photos of build process here)
-*Explain the build steps*
+![Build](Add photos of build ![67183cf4-bac6-4937-971d-faabf5f112dc](https://github.com/user-attachments/assets/c9775056-a2b8-4897-95a0-2415e6f9410b)
+process here)
+*LCD Connection: Connect SDA to A4 and SCL to A5 on the Arduino. Connect VCC to 5V and GND to GND. Confirm the I2C address in the code (commonly 0x27).
+IR Sensors: Connect IR Sensor 1’s signal pin to Digital Pin 2 (Player 1) and IR Sensor 2’s signal pin to Digital Pin 3 (Player 2). Power each sensor by connecting VCC to 5V and GND to GND.
+LEDs: Connect Digital Pins 4–10 to each LED (left to right) with the negative pin of each LED connected to GND through a 220Ω resistor.
+Buzzer: Connect positive to Digital Pin 11 and negative to GND.
+Upload Code: Paste and upload the code in Arduino IDE, setting the correct board and port.
+run the Game: When powered on, the LCD displays the game title, and a start tune plays. Use the IR sensors to move the LED left or right. Reaching the ends triggers a win message and sound for the respective player.*
 
-![Final](Add photo of final product here)
-*Explain the final build*
-
+![Final](Add photo of final product here![bc19bba0-8225-4b9b-bc0c-6cc14c6371b9](https://github.com/user-attachments/assets/e30015f9-a80f-4a05-bb10-38aba111c7c3))
+* 1. Game Initialization
+Power-Up Sequence: When the game is powered on, the Arduino microcontroller initializes all components. It sets the LCD to display a welcoming message, such as “Welcome to Finger Wars!”, establishing the game's theme.
+Sound Effect: To enhance the initial experience, a retro start tune is played through the buzzer, adding an audio cue that signals the game is ready to begin.
+2. Game Start
+Initial Setup: The LED array starts with the LED positioned at the center. This central starting point visually indicates that the game is balanced, with both players having equal opportunities to win.
+Player Readiness: Players are prompted to get ready, and the game awaits their hand movements over the IR sensors to initiate the gameplay.
+3. Player Interaction
+IR Sensor Activation: Each IR sensor is positioned to detect hand movements:
+Player 1's Control: When Player 1 waves their hand over their designated IR sensor, the sensor detects the movement, signaling the Arduino to execute a command to move the LED one position to the right.
+Player 2's Control: Similarly, Player 2 can wave their hand over their IR sensor, prompting the LED to move one position to the left.
+Real-Time Feedback: After each movement, the current position of the LED is updated and displayed on the LCD, allowing players to see their progress and strategize their next move.
+4. Winning Condition
+Position Check: The Arduino continuously monitors the position of the LED. It compares the LED’s position against predetermined thresholds:
+If the LED moves to the far-right end of the array, the Arduino registers that Player 1 has won.
+If the LED reaches the far-left end, Player 2 is declared the winner.
+Victory Announcement: Upon determining a winner, the game updates the LCD to announce “Player 1 Wins!” or “Player 2 Wins!” Additionally, the buzzer plays a celebratory sound effect, enhancing the excitement of winning.
+5. End of Game
+Game Termination: Once a player wins, the game ceases to respond to further inputs from the IR sensors, effectively ending that round of competition.
+Restart Option: Players can reset the game by powering it off and then on again or implement a button for resetting within the code, allowing for multiple rounds of play without needing to reconfigure the setup.
+6. User Experience
+Engaging Gameplay: The game’s design focuses on creating an immersive experience. Players actively engage with the game through physical movement, promoting interaction and competition.
+Visual and Auditory Feedback: The combination of LED indicators, real-time updates on the LCD, and sound effects from the buzzer ensures players receive immediate feedback on their actions, enhancing their sense of involvement and enjoyment.
+Hygienic Interaction: The use of IR sensors allows for touchless gameplay, making the game more appealing in social settings, particularly in light of hygiene concerns.
+The final build of Finger Wars effectively integrates various electronic components to create a fun and interactive game. Its innovative use of IR sensors for player interaction, combined with visual and auditory feedback, provides a modern twist to classic competitive games. The game not only serves as a source of entertainment but also demonstrates the principles of electronics and programming, making it an engaging project for both creators and players alike*
 ### Project Demo
 # Video
 [Add your demo video link here]
@@ -125,9 +160,9 @@ For Hardware:
 [Add any extra demo materials/links]
 
 ## Team Contributions
-- [Name 1]: [Specific contributions]
-- [Name 2]: [Specific contributions]
-- [Name 3]: [Specific contributions]
+- [Amruthavarshan P H]: [ideator,schrematic,video editing,Coding]
+- [Adarsh A]: [circuit,coding,debugging]
+- [Arunkrishna P U]: [coding,connections]
 
 ---
 Made with ❤️ at TinkerHub Useless Projects 
