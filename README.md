@@ -84,16 +84,16 @@ For Software:
 For Software:
 
 # Screenshots (Add at least 3)
-![Screenshot1](Add screenshot 1 here w![e111f725-28f1-417e-bdeb-39c91b8d421a](https://github.com/user-attachments/assets/bf724560-ddf0-4c65-849f-7715a58585a7)
-ith proper name)
-*Add caption explaining what this shows*
+![Screenshot1](![78c9dc32-3709-4f48-aa48-f71229333b76](https://github.com/user-attachments/assets/865ecf9e-b28a-4e7d-98a8-9c5cb642dbba))
+*connections
+ning what this shows*
 
-![Screenshot2](Add screenshot 2 here with ![bc19bba0-8225-4b9b-bc0c-6cc14c6371b9](https://github.com/user-attachments/assets/7235b86a-50b3-4e0e-a096-b6c16f0bb47c)
-proper name)
-*Add caption explaining what this shows*
+![Screenshot2]( ![bc19bba0-8225-4b9b-bc0c-6cc14c6371b9](https://github.com/user-attachments/assets/7235b86a-50b3-4e0e-a096-b6c16f0bb47c)
+)
+*connections*
 
-![Screenshot3](Add screenshot 3 here with proper name![26d287c1-6fd7-46fb-83e9-c5f6d01cacd0](https://github.com/user-attachments/assets/ae793ae5-6368-4fbd-9306-3918a38326a1))
-*Add caption explaining what this shows*
+![Screenshot3](![26d287c1-6fd7-46fb-83e9-c5f6d01cacd0](https://github.com/user-attachments/assets/ae793ae5-6368-4fbd-9306-3918a38326a1))
+*connections*
 
 
 # Diagrams
