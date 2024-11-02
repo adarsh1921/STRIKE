@@ -97,7 +97,8 @@ proper name)
 
 
 # Diagrams
-![Workflow](Add your workflow/architecture diagram here)
+
+![Workflow](![09f88809-3e1c-4507-8d43-8879a3c3b0ef](https://github.com/user-attachments/assets/60b25892-a073-4481-ada4-ba8d712e469c))
 *Add caption explaining your workflow*
 
 For Hardware:
