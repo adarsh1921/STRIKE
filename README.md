@@ -103,13 +103,14 @@ proper name)
 For Hardware:
 
 # Schematic & Circuit
-![Circuit]([Screenshot 2024-11-02 222235](https://github.com/user-attachments/assets/b08b9d70-3c48-4343-a1e0-9202ca902949))
+![Circuit](![Screenshot 2024-11-02 222235](https://github.com/user-attachments/assets/fcd238f1-876e-4dd4-8f68-e4806466d02e)
+r-attachments/assets/a071a0cd-b80c-4c2c-aad2-c7bebe6abaf9))
 *Connect the LCD (I2C 16x2) by wiring SDA to A4 and SCL to A5 on the Arduino Uno, and power it by connecting VCC to 5V and GND to GND.
 For the IR sensors, connect IR Sensor 1 (Player 1) to Digital Pin 2 and IR Sensor 2 (Player 2) to Digital Pin 3.
 To set up the LEDs as position indicators, connect each one to Digital Pins 4 through 10 in order.
 Finally, connect the buzzer by wiring the positive terminal to Digital Pin 11 and the negative terminal to GND.*
 
-![Schematic]([Neat Inari-Wolt (1)](https://github.com/user-attachments/assets/991dd80c-4d94-4111-bdda-2444acad88a8))
+![Schematic](![Neat Inari-Wolt (1)](https://github.com/user-attachments/assets/a071a0cd-b80c-4c2c-aad2-c7bebe6abaf9))
 *AFinger Wars is an engaging two-player game that utilizes an Arduino microcontroller along with various electronic components to create a competitive experience. At the heart of the game is an I2C LCD that displays vital information, including game messages and the current position of the LED. A row of LEDs, connected to digital output pins, forms the game field, while two IR sensors play a crucial role in player interaction. IR sensors detect the players' hand movements without direct contact, allowing for a more dynamic and hygienic gameplay experience. As players wave their hands over the sensors, the LED shifts toward their opponent's end of the row. The game begins with the LED centered, and players compete to move it to the edges, striving for victory. When the LED reaches either end, the game announces the winner on the LCD and plays a celebratory sound through the buzzer. This innovative use of IR sensors enhances the responsiveness and engagement of the game, providing a modern twist to the classic concept of competition.*
 
 # Build Photos
