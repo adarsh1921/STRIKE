@@ -84,18 +84,19 @@ For Software:
 For Software:
 
 # Screenshots (Add at least 3)
-![Screenshot1](![78c9dc32-3709-4f48-aa48-f71229333b76](https://github.com/user-attachments/assets/865ecf9e-b28a-4e7d-98a8-9c5cb642dbba))
 
-![Screenshot2]( ![bc19bba0-8225-4b9b-bc0c-6cc14c6371b9](https://github.com/user-attachments/assets/7235b86a-50b3-4e0e-a096-b6c16f0bb47c)
-)
-
-![Screenshot3](![26d287c1-6fd7-46fb-83e9-c5f6d01cacd0](https://github.com/user-attachments/assets/ae793ae5-6368-4fbd-9306-3918a38326a1))
-
+![Screenshot 2024-11-03 013215](https://github.com/user-attachments/assets/ee271287-8b08-4478-a510-85b4225fd72e)
+![Screenshot 2024-11-03 013233](https://github.com/user-attachments/assets/ae2e92ed-3b27-418b-8e79-7c125c6e113f)
+![Screenshot 2024-11-03 013250](https://github.com/user-attachments/assets/ad63d95f-0b84-4258-aaaf-709af9888062)
+![Screenshot 2024-11-03 013309](https://github.com/user-attachments/assets/723bc720-42f0-4585-a283-6b7a977a9596)
+![Screenshot 2024-11-03 013322](https://github.com/user-attachments/assets/8c22ecbc-92a6-4919-8e5c-5c0f8e428c49)
 
 # Diagrams
 
 [Workflow]
+
 ![Screenshot 2024-11-03 000426](https://github.com/user-attachments/assets/e6061365-ee1c-47d9-906e-42d48197710e)
+
 The game begins by initializing the LCD, LEDs, buttons, and buzzer, followed by displaying a welcome message and playing a start tune. In the idle state, the LED is set at the center position while waiting for player input. When a player presses a button, the game checks which player activated their button—if Player 1's button is pressed, the LED moves to the right, and if Player 2's button is pressed, it moves to the left. The current LED position is then updated and displayed on the LCD. The game checks for a win condition; if the LED reaches the far-right position, Player 1 wins, and if it reaches the far-left position, Player 2 wins. Upon a win, the game displays the winning message on the LCD, prints the winner to the Serial Monitor, plays a victory sound, and ends the game, awaiting a potential reset.
 
 
@@ -103,23 +104,28 @@ For Hardware:
 
 # Schematic & Circuit
 [Circuit]
-(![Screenshot 2024-11-02 222235](https://github.com/user-attachments/assets/fcd238f1-876e-4dd4-8f68-e4806466d02e)
-r-attachments/assets/a071a0cd-b80c-4c2c-aad2-c7bebe6abaf9))
+
+![Screenshot 2024-11-02 222235](https://github.com/user-attachments/assets/fcd238f1-876e-4dd4-8f68-e4806466d02e)
+
 Connect the LCD (I2C 16x2) by wiring SDA to A4 and SCL to A5 on the Arduino Uno, and power it by connecting VCC to 5V and GND to GND.
 For the IR sensors, connect IR Sensor 1 (Player 1) to Digital Pin 2 and IR Sensor 2 (Player 2) to Digital Pin 3.
 To set up the LEDs as position indicators, connect each one to Digital Pins 4 through 10 in order.
 Finally, connect the buzzer by wiring the positive terminal to Digital Pin 11 and the negative terminal to GND.
 
-![Schematic](![Neat Inari-Wolt (1)](https://github.com/user-attachments/assets/a071a0cd-b80c-4c2c-aad2-c7bebe6abaf9))
+[Schematic]
+
+(![Neat Inari-Wolt (1)](https://github.com/user-attachments/assets/a071a0cd-b80c-4c2c-aad2-c7bebe6abaf9))
+
 A Finger Wars is an engaging two-player game that utilizes an Arduino microcontroller along with various electronic components to create a competitive experience. At the heart of the game is an I2C LCD that displays vital information, including game messages and the current position of the LED. A row of LEDs, connected to digital output pins, forms the game field, while two IR sensors play a crucial role in player interaction. IR sensors detect the players' hand movements without direct contact, allowing for a more dynamic and hygienic gameplay experience. As players wave their hands over the sensors, the LED shifts toward their opponent's end of the row. The game begins with the LED centered, and players compete to move it to the edges, striving for victory. When the LED reaches either end, the game announces the winner on the LCD and plays a celebratory sound through the buzzer. This innovative use of IR sensors enhances the responsiveness and engagement of the game, providing a modern twist to the classic concept of competition.
 
 # Build Photos
-![Components]
+[Components]
+
 Arduino board, I2C LCD, 8 LEDs, 2 IR sensors, buzzer, resistors, breadboard, jumper wires.
 
 
-[Build]
 ![67183cf4-bac6-4937-971d-faabf5f112dc](https://github.com/user-attachments/assets/c9775056-a2b8-4897-95a0-2415e6f9410b)
+
 LCD Connection: Connect SDA to A4 and SCL to A5 on the Arduino. Connect VCC to 5V and GND to GND. Confirm the I2C address in the code (commonly 0x27).
 IR Sensors: Connect IR Sensor 1’s signal pin to Digital Pin 2 (Player 1) and IR Sensor 2’s signal pin to Digital Pin 3 (Player 2). Power each sensor by connecting VCC to 5V and GND to GND.
 LEDs: Connect Digital Pins 4–10 to each LED (left to right) with the negative pin of each LED connected to GND through a 220Ω resistor.
@@ -128,6 +134,7 @@ Upload Code: Paste and upload the code in Arduino IDE, setting the correct board
 run the Game: When powered on, the LCD displays the game title, and a start tune plays. Use the IR sensors to move the LED left or right. Reaching the ends triggers a win message and sound for the respective player.
 
 [Final]
+
 ![bc19bba0-8225-4b9b-bc0c-6cc14c6371b9](https://github.com/user-attachments/assets/e30015f9-a80f-4a05-bb10-38aba111c7c3)
 1. Game Initialization
 Power-Up Sequence: When the game is powered on, the Arduino microcontroller initializes all components. It sets the LCD to display a welcoming message, such as “Welcome to Finger Wars!”, establishing the game's theme.
