@@ -99,7 +99,9 @@ ning what this shows*
 # Diagrams
 
 ![Workflow](![09f88809-3e1c-4507-8d43-8879a3c3b0ef](https://github.com/user-attachments/assets/60b25892-a073-4481-ada4-ba8d712e469c))
-*Add caption explaining your workflow*
+*The game begins by initializing the LCD, LEDs, buttons, and buzzer, followed by displaying a welcome message and playing a start tune. In the idle state, the LED is set at the center position while waiting for player input. When a player presses a button, the game checks which player activated their button—if Player 1's button is pressed, the LED moves to the right, and if Player 2's button is pressed, it moves to the left. The current LED position is then updated and displayed on the LCD. The game checks for a win condition; if the LED reaches the far-right position, Player 1 wins, and if it reaches the far-left position, Player 2 wins. Upon a win, the game displays the winning message on the LCD, prints the winner to the Serial Monitor, plays a victory sound, and ends the game, awaiting a potential reset.
+
+*
 
 For Hardware:
 
