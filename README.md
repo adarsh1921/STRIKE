@@ -161,9 +161,8 @@ The final build of Finger Wars effectively integrates various electronic compone
 
 ## Team Contributions
 - [Amruthavarshan P H]: [ideator,schrematic,video editing,Coding]
-- [Adarsh A]: [circuit,coding,debugging]
-- [Arunkrishna P U]: [coding,connections]
-
+- [Adarsh A]: [circuit,coding,debugging,team leader,work flow diagram]
+- [Arunkrishna P U]: [coding,connections,components,wrtings,planning ]
 ---
 Made with ❤️ at TinkerHub Useless Projects 
 
