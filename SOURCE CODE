@@ -1,0 +1,133 @@
+#include <Wire.h>
+#include <LiquidCrystal_I2C.h>
+
+// LCD setup
+LiquidCrystal_I2C lcd(0x27, 16, 2); // Set the I2C address and size of the LCD
+
+// LED pins, IR sensor pins, and buzzer pin
+const int ledPins[] = {4, 5, 6, 7, 8, 9, 10};
+const int numLEDs = sizeof(ledPins) / sizeof(ledPins[0]);
+const int irSensor1 = 2; // IR sensor for Player 1
+const int irSensor2 = 3; // IR sensor for Player 2
+const int buzzerPin = 11; // Buzzer pin
+
+// Game state
+int currentLED = numLEDs / 2; // Start with the LED in the middle
+bool gameOver = false;
+
+// Variables to track the previous state of the IR sensors
+int prevIrSensor1State = LOW;
+int prevIrSensor2State = LOW;
+
+void setup() {
+  Serial.begin(9600);
+  lcd.begin(16, 2); // Initialize the LCD with 16 columns and 2 rows
+  lcd.backlight();
+
+  // Initialize pins
+  for (int i = 0; i < numLEDs; i++) {
+    pinMode(ledPins[i], OUTPUT);
+  }
+  pinMode(irSensor1, INPUT); // Set IR sensor 1 pin as input
+  pinMode(irSensor2, INPUT); // Set IR sensor 2 pin as input
+  pinMode(buzzerPin, OUTPUT);
+
+  // Welcome message and start beep
+  lcd.print("wiggle-to-Win Game");
+  retroStartTune(); // Play the retro gaming start tune
+  delay(2000);
+  lcd.clear();
+  updateLED(); // Call updateLED to light up the center LED
+}
+
+void loop() {
+  if (!gameOver) {
+    // Read the current state of the IR sensors
+    int currentIrSensor1State = digitalRead(irSensor1);
+    int currentIrSensor2State = digitalRead(irSensor2);
+
+    // Check for fluctuation (change) in IR sensor 1 state
+    if (currentIrSensor1State != prevIrSensor1State) {
+      moveLEDRight();
+      delay(200); // Simple debounce
+    }
+
+    // Check for fluctuation (change) in IR sensor 2 state
+    if (currentIrSensor2State != prevIrSensor2State) {
+      moveLEDLeft();
+      delay(200); // Simple debounce
+    }
+
+    // Update the previous state of the IR sensors
+    prevIrSensor1State = currentIrSensor1State;
+    prevIrSensor2State = currentIrSensor2State;
+  }
+}
+
+void updateLED() {
+  // Turn off all LEDs first
+  for (int i = 0; i < numLEDs; i++) {
+    digitalWrite(ledPins[i], LOW);
+  }
+  // Turn on the LED at the current position
+  digitalWrite(ledPins[currentLED], HIGH);
+
+  // Update LCD with current LED position
+  lcd.clear();
+  lcd.print("LED Pos: ");
+  lcd.print(currentLED + 1);
+}
+
+void moveLEDRight() {
+  if (currentLED < numLEDs - 1) {
+    currentLED++;
+    updateLED();
+    if (currentLED == numLEDs - 1) {
+      gameOver = true;
+      lcd.clear();
+      lcd.print("Player 1 Wins!");
+      Serial.println("Player 1 Wins!");
+      winningBeep(); // Winning beep for player 1
+    }
+  }
+}
+
+void moveLEDLeft() {
+  if (currentLED > 0) {
+    currentLED--;
+    updateLED();
+    if (currentLED == 0) {
+      gameOver = true;
+      lcd.clear();
+      lcd.print("Player 2 Wins!");
+      Serial.println("Player 2 Wins!");
+      winningBeep(); // Winning beep for player 2
+    }
+  }
+}
+
+// Function for a retro gaming-inspired start tune
+void retroStartTune() {
+  int melody[] = {330, 349, 392, 440, 494, 523, 587, 659}; // Frequencies in Hz
+  int durations[] = {100, 100, 100, 100, 100, 100, 100, 300}; // Durations in ms
+
+  for (int i = 0; i < 8; i++) {
+    tone(buzzerPin, melody[i], durations[i]);
+    delay(durations[i] + 50); // Delay to separate the notes
+  }
+}
+
+// Function for a winning beep with a Super Mario-like melody
+void winningBeep() {
+  int melody[] = {659, 659, 0, 659, 0, 523, 659, 0, 784}; // Frequencies in Hz
+  int durations[] = {150, 150, 150, 150, 150, 150, 150, 150, 300}; // Durations in ms
+
+  for (int i = 0; i < 9; i++) {
+    if (melody[i] == 0) {
+      delay(durations[i]); // Pause for silence
+    } else {
+      tone(buzzerPin, melody[i], durations[i]);
+      delay(durations[i] + 50); // Delay to separate the notes
+    }
+  }
+}
